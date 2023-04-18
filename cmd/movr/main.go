@@ -7,6 +7,7 @@ import (
 
 var (
 	moonriverUrl = "https://rpc.api.moonriver.moonbeam.network"
+	//moonriverUrl = "https://moonriver.api.onfinality.io/public"
 )
 
 func main() {

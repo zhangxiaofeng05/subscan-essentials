@@ -198,7 +198,7 @@ func GetBlock(ctx context.Context, rpcclient *chainrpc.Client, height int64) *Bl
 		utils.UnmarshalAny(&ed.Params, extrinsic.Params)
 
 		// only get type: balances-transfer
-		if extrinsic.CallModule == "balances" && extrinsic.CallModuleFunction == "transfer" {
+		if extrinsic.CallModule == "balances" && (extrinsic.CallModuleFunction == "transfer" || extrinsic.CallModuleFunction == "transfer_keep_alive") {
 			one := List{
 				From:   extrinsic.AccountId,
 				Failed: !extrinsic.Success,
